@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>添加纪念日</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", "PingFang SC", sans-serif;
+            background: linear-gradient(135deg, #A8EDEA, #FED6E3);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            width: 90%;
+            max-width: 400px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff5f8f;
+            margin-bottom: 25px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input[type="text"], input[type="date"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #ff91af;
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #f8749e;
+        }
+
+        .back {
+            margin-top: 20px;
+        }
+
+        .back a {
+            color: #888;
+            text-decoration: none;
+        }
+
+        .back a:hover {
+            color: #ff91af;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>添加新的纪念日 💖</h1>
+        <form action="/anniversary/add/" method="POST">
+            {% csrf_token %}
+            <input type="text" name="title" placeholder="纪念日标题，如 相识纪念日" required>
+            <input type="date" name="date" required>
+            <button type="submit">确认创建</button>
+        </form>
+
+        <div class="back">
+            <a href="/home/">返回主页</a>
+        </div>
+    </div>
+</body>
+</html>

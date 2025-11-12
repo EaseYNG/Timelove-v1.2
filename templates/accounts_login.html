@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(120deg, #74ABE2, #5563DE);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            width: 320px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 24px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            background-color: #5563DE;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4052c8;
+        }
+        .link {
+            display: block;
+            margin-top: 16px;
+            font-size: 14px;
+            color: #5563DE;
+            text-decoration: none;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="login-container">
+    <h2>用户登录</h2>
+    <form action="/login/" method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="用户名" required>
+        <input type="password" name="password" placeholder="密码" required>
+        <button type="submit">登录</button>
+    </form>
+    <a class="link" href="/login/signup/">还没有账号？去注册</a>
+</div>
+</body>
+</html>

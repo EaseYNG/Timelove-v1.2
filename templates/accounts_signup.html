@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>注册 - MySite</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background: linear-gradient(120deg, #4facfe, #00f2fe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .register-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            width: 340px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 24px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background-color: #4facfe;
+            color: white;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #3b89d7;
+        }
+    </style>
+</head>
+<body>
+<div class="register-container">
+    <h2>创建账户</h2>
+    <form action="/login/signup/" method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="用户名" required>
+        <input type="password" name="password" placeholder="密码" required>
+        <select name="sex" required>
+            <option value="" disabled selected>选择性别</option>
+            <option value="M">男</option>
+            <option value="F">女</option>
+        </select>
+        <button type="submit">注册</button>
+    </form>
+</div>
+</body>
+</html>
