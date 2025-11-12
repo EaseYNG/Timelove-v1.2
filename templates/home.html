@@ -87,8 +87,15 @@
             background-color: #fafafa;
         }
 
+        tr {
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
         tr:hover {
             background-color: #fff7f9;
+            transform: scale(1.01);
+            box-shadow: 0 4px 12px rgba(255, 145, 175, 0.2);
         }
 
         .logout {
@@ -105,6 +112,14 @@
         .logout a:hover {
             text-decoration: underline;
         }
+
+        /* 轻提示 */
+        .tip {
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+            margin-top: 8px;
+        }
     </style>
 </head>
 <body>
@@ -116,31 +131,29 @@
 <div class="content">
     <h2>纪念日列表</h2>
 
-    <!-- 纪念日展示表格 -->
     {% if anniversaries %}
         <table>
             <tr>
                 <th>标题</th>
                 <th>日期</th>
-                <th>倒计时</th>
+                <th>描述</th>
             </tr>
             {% for item in anniversaries %}
-            <tr>
+            <tr onclick="window.location.href='/anniversary/edit/?id={{ item.id }}'">
                 <td>{{ item.title }}</td>
                 <td>{{ item.date }}</td>
-
+                <td>{{ item.description }}</td>
             </tr>
             {% endfor %}
         </table>
+        <p class="tip">✨ 点击任意纪念日即可进行编辑 ✨</p>
     {% else %}
         <p>你还没有添加任何纪念日哦 💕</p>
     {% endif %}
 
     <hr style="margin: 30px 0;">
 
-
     <h2>添加新的纪念日</h2>
-    <!-- 添加纪念日 -->
     <form action="/anniversary/add/" method="GET">
         {% csrf_token %}
         <button type="submit">添加</button>
