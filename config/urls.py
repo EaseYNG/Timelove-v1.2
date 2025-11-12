@@ -18,14 +18,16 @@ from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import path, include
 
-from apps.accounts import views
+from apps.accounts import views as account_views
+from apps.anniversary import views as anniversary_views
+from apps.main import views as main_views
 
 # 根路径
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', lambda request: redirect('/login/')),
     path('login/', include('apps.accounts.urls')),
-    path('home/', views.home, name='home'),
-    path('logout/', views.logout, name='logout'),
+    path('home/', include('apps.main.urls')),
+    path('logout/', account_views.logout, name='logout'),
     path('anniversary/', include('apps.anniversary.urls')),
 ]

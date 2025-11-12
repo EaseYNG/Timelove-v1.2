@@ -39,13 +39,7 @@ def login(request):
     print("Login success")
     return redirect('/home/') # 登录成功重定向至home页
 
-@login_required(login_url='/login/')
-def home(request):
-    # 读取用户数据
-    current_user = request.user
-    name = current_user.username
 
-    return render(request, "home.html", {'username': name})
 
 @login_required(login_url='/login/')
 def logout(request):

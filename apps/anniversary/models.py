@@ -16,7 +16,7 @@ class Anniversary(models.Model):
         related_name='anniversaries', # 可通过user.anniversaries()访问
     )
     def __str__(self):
-        return f"[{self.id}][{self.date}][{self.title}]({self.owner})"
+        return f"[{self.id}] [{self.date}] [{self.title}] ({self.owner})"
 
     class Meta:
         ordering = ['id']
