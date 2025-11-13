@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc152a10-a96d-42f3-818a-dc87a5eb36ba" name="更改" comment="增加main模块，初步实现纪念日显示">
-      <change afterPath="$PROJECT_DIR$/templates/anniversary_edit.html" afterDir="false" />
+    <list default="true" id="fc152a10-a96d-42f3-818a-dc87a5eb36ba" name="更改" comment="初步实现登录、注册">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/timelove_backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/timelove_backend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/anniversary/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/anniversary/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/anniversary/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/anniversary/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/anniversary/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/anniversary/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/main/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/anniversary_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/anniversary_create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -42,7 +41,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/EaseYNG/Timelove-v1.2&quot;,
-    &quot;accountId&quot;: &quot;5063f41c-6c4f-4e0f-ae7f-19e0d636c5c7&quot;
+    &quot;accountId&quot;: &quot;4d4874fc-81f4-432f-8f3d-3b0949700e50&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -56,7 +55,6 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django 服务器.Server.executor&quot;: &quot;Run&quot;,
     &quot;Django 服务器.timelove_backend.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
@@ -65,18 +63,16 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/dev/Timelove-v1.2/Timelove-v1.2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RunManager">
-    <configuration name="Server" type="Python.DjangoServer" factoryName="Django server">
+    <configuration name="timelove_backend" type="Python.DjangoServer" factoryName="Django server">
       <module name="timelove_backend" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,8 +81,9 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="E:\dev\Timelove-v1.2\Timelove-v1.2" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_NAME" value="Python 3.13 (timelove_backend)" />
+      <option name="WORKING_DIRECTORY" value="E:\dev\PythonProject\timelove_backend" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
@@ -104,12 +101,14 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PY-243.24978.54" />
-        <option value="bundled-python-sdk-91e3b7efe1d4-466328ff949b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.24978.54" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PY-252.27397.106" />
+        <option value="bundled-python-sdk-4e2b1448bda8-9a97661f3031-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.27397.106" />
       </set>
     </attachedChunks>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="StructureViewState">
+    <option name="selectedTab" value="逻辑" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
       <changelist id="fc152a10-a96d-42f3-818a-dc87a5eb36ba" name="更改" comment="" />
@@ -122,39 +121,13 @@
       <workItem from="1762866397155" duration="2245000" />
       <workItem from="1762873855148" duration="1407000" />
       <workItem from="1762914442705" duration="5653000" />
-      <workItem from="1762925522852" duration="32000" />
-      <workItem from="1762925558953" duration="37000" />
-      <workItem from="1762927872335" duration="4982000" />
-      <workItem from="1762938225734" duration="2658000" />
-      <workItem from="1762940881479" duration="1157000" />
+      <workItem from="1762954507013" duration="65000" />
+      <workItem from="1762962935237" duration="117000" />
+      <workItem from="1763004232534" duration="818000" />
     </task>
-    <task id="LOCAL-00001" summary="增加main模块，初步实现纪念日显示">
-      <option name="closed" value="true" />
-      <created>1762933956080</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1762933956080</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加main模块，初步实现纪念日显示" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加main模块，初步实现纪念日显示" />
   </component>
 </project>

@@ -137,12 +137,18 @@
                 <th>标题</th>
                 <th>日期</th>
                 <th>描述</th>
+                <th>倒计时</th>
             </tr>
             {% for item in anniversaries %}
             <tr onclick="window.location.href='/anniversary/edit/?id={{ item.id }}'">
                 <td>{{ item.title }}</td>
                 <td>{{ item.date }}</td>
                 <td>{{ item.description }}</td>
+                {% if item.duration < 0 %}
+                    <td>已{{ item.abs_duration }}天</td>
+                {% else %}
+                    <td>还有{{ item.duration }}天</td>
+                {% endif %}
             </tr>
             {% endfor %}
         </table>

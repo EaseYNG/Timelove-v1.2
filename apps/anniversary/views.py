@@ -1,3 +1,4 @@
+from datetime import datetime
 from dbm import error
 
 from django.contrib.auth.decorators import login_required
@@ -33,6 +34,8 @@ def get_anniversary_by_id(anniversary_id):
 def get_anniversaries(current_user):
     # 筛选所有属于当前用户的纪念日
     anniversaries = list(Anniversary.objects.filter(owner=current_user))
+    for a in anniversaries:
+        a.duration = (a.date - datetime.now().date()).days # 计算倒计时天数
     return anniversaries
 
 def edit_anniversary(request):
